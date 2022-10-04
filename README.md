@@ -39,10 +39,24 @@ installation instructions on linux:
 2. install VSCode (from software library in ubuntu)
 3. install ROS noetic ninjemys (full installation)
 4. verify gcc and python compiler versions installed (shouldn't normally be necessary)
-5. install (an absolutely staggering number of) packages using $ sudo apt get install package_name
-6. - ros-noetic-urdf (might not be necessary)
-7. - ros-noetic-xacro (might not be necessary)
-8. - liburdfdom-tools
+5. install (a staggering number of) packages using `$ sudo apt get install package_name`
+   - ros-noetic-urdf (might not be necessary)
+   - ros-noetic-xacro (might not be necessary)
+   - liburdfdom-tools
+   - ros-noetic-gazebo-ros-pkgs
+   - ros-noetic-gazebo-msgs
+   - ros-noetic-gazebo-plugins
+   - ros-noetic-gazebo-ros-control
+   - ros-noetic-joy
+   - ros-noetic-moveit
+   - ros-noetic-moveit-plugins
+   - ros-noetic-moveit-planners
+   - ros-noetic-joint-state-controller
+   - ros-noetic-position-controllers
+   - ros-noetic-joint-trajectory-controller
+   - ros-noetic-navigation
+   - ros-noetic-gmapping
+   - ros-noetic-map-server
 
 ## demo and behavior
 
