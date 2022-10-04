@@ -1,0 +1,3 @@
+maximum_speeds:
+    max_vehicle_speed: 1.0
+    max_turn_speed: 0.5

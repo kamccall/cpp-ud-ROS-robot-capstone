@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- REF original file found in Mastering ROS for Robotics Programming, 3rd Ed, Joseph and Cacace, 2015-->
+<!-- REV revised and extended by github/kamccall, last revision date:  25sept22 -->
+<launch>
+  <!-- differential_teleop_key already has its own built in velocity smoother -->
+  <node pkg="km_diff_robot_gazebo_auto" type="diff_wheeled_robot_key" name="diff_wheeled_robot_key" output="screen">
+    <param name="scale_linear" value="0.5" type="double"/>
+    <param name="scale_angular" value="1.5" type="double"/>
+    <remap from="turtlebot_teleop_keyboard/cmd_vel" to="/cmd_vel"/> 
+  </node>
+</launch>
