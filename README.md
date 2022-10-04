@@ -40,7 +40,7 @@ installation instructions on linux:
 3. install ROS noetic ninjemys and set up catkin workspace
    - `$ sudo apt update`
    - `$ sudo apt install ros-noetic-desktop-full`
-   - `$ sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+   - `$ sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential`
    - `$ mkdir -p ~/catkin_ws/src`
    - `$ source /opt/ros/noetic/setup.bash`
    - `$ cd ~/catkin_ws/src`
@@ -50,7 +50,7 @@ installation instructions on linux:
 5. verify gcc and python compiler versions installed (shouldn't normally be necessary)
    - `$ python3 --version`
    - `$ gcc --version'
-7. install (a staggering number of) packages using `$ sudo apt-get install *package_name*`
+7. install (a staggering number of) packages using `$ sudo apt-get install package_name`
    - `ros-noetic-urdf` (might not be necessary)
    - `ros-noetic-xacro` (might not be necessary)
    - `liburdfdom-tools`
@@ -76,10 +76,15 @@ installation instructions on linux:
    - `$ catkin_make`
 
 ## demo and behavior
-i have organized the two projects into three discrete demonstrations.  the first two require four linux terminal windows and the third requires five unique windows to perform properly. this assumes that both packages have been 
+i have organized the two projects into three discrete demonstrations.  the first requires five linux terminal windows and the second and third require four unique windows to perform properly. (this assumes that both packages have been compiled using instructions above.)
 
-### demo1: manually controlling robot in gazebo environment with custom odometry display
-
+### demo1: manually controlling robot in gazebo environment with custom odometry display (each in separate terminal)
+1. `$ roscore` (starts ROS master server, parameter server and other services)
+2. `$ roslaunch km_diff_robot_gazebo diff_wheeled_gazebo_willow.launch` (launches gazebo with diffbot in willow environment)
+3. `$ roslaunch km_diff_robot_gazebo keyboard_teleop.launch` (launches teleop application)
+4. `$ rosrun km_diff_robot_gazebo sub_robot_odometry` (launches app that will display forward and angular velocity)
+5. `$ rosrun km_diff_robot_gazebo sub_robot_location` (launches app that will display location subset, only x and y coordinates)
+6. click into active teleop window running python script, and use keystrokes to move robot, observing movement and node output
 
 ### demo2: manually navigating robot through gazebo to create map of environment (to support demo3)
 
