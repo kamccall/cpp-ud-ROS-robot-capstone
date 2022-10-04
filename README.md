@@ -113,6 +113,15 @@ this demo can be run successfully without going through demo2 above, because the
 6. click on `Nav 2D` button in upper ribbon, click on desired map location on rviz diplay, and watch the robot go!
 
 ## rubric points addressed
+### loops, functions, I/O
+* project demonstrates understanding of c++ functions and control structures
+  - `sub_robot_odometry.cpp` lines 30, 40, 48, 51, 56, 61/66,, 76, 82, 90, 102
+  - `sub_robot_location.cpp` lines 18, 32, 46
+* project reads data from a file or the program writes data to file
+  - `sub_robot_odometry.cpp` line 50
+* project accepts user input and processes the input
+  - `sub_robot_odometry.cpp` line 32
 
+### object oriented programming
 
 
