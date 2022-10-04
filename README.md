@@ -38,8 +38,14 @@ installation instructions on linux:
 1. install ubuntu linux 20.04.5 LTS 
 2. install VSCode (from software library in ubuntu)
 3. install ROS noetic ninjemys (full installation)
-4. verify gcc and python compiler versions installed (shouldn't normally be necessary)
-5. install (a staggering number of) packages using `$ sudo apt-get install package_name`
+   - `$ mkdir -p ~/catkin_ws/src` (to create a ROS catkin workspace)
+   - `$ source /opt/ros/noetic/setup.bash`
+   - `$ cd ~/catkin_ws/src`
+   - `$ catkin_init_workspace`
+   - `$ cd ~/catkin_ws`
+   - `$ catkin_make`
+5. verify gcc and python compiler versions installed (shouldn't normally be necessary)
+6. install (a staggering number of) packages using `$ sudo apt-get install package_name`
    - `ros-noetic-urdf` (might not be necessary)
    - `ros-noetic-xacro` (might not be necessary)
    - `liburdfdom-tools`
@@ -57,8 +63,23 @@ installation instructions on linux:
    - `ros-noetic-navigation`
    - `ros-noetic-gmapping`
    - `ros-noetic-map-server`
+7. git clone repo and compile environment
+   - `$ git clone https://github.com/kamccall/cpp-ud-ROS-robot-capstone.git`
+   - (within cloned repo) `$ cp -r km_diff_robot_gazebo ~/catkin_ws/src`
+   - (within cloned repo) `$ cp -r km_diff_robot_gazebo_auto ~/catkin_ws/src`
+   - `$ cd ~/catkin_ws`
+   - `$ catkin_make`
 
 ## demo and behavior
+i have organized the two projects into three discrete demonstrations.  the first two require four linux terminal windows and the third requires five unique windows to perform properly. this assumes that both packages have been 
+
+### demo1: manually controlling robot in gazebo environment with custom odometry display
+
+
+### demo2: manually navigating robot through gazebo to create map of environment (to support demo3)
+
+
+### demo3: autonomously navigate robot through gazebo from rviz using saved environment map
 
 
 
