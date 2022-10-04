@@ -49,7 +49,7 @@ installation instructions on linux:
    - `$ catkin_make`
 5. verify gcc and python compiler versions installed (shouldn't normally be necessary)
    - `$ python3 --version`
-   - `$ gcc --version'
+   - `$ gcc --version`
 7. install (a staggering number of) packages using `$ sudo apt-get install package_name`
    - `ros-noetic-urdf` (might not be necessary)
    - `ros-noetic-xacro` (might not be necessary)
