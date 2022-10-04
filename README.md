@@ -37,15 +37,20 @@ while the rubric requests cross-platform installation instructions, given the we
 installation instructions on linux:
 1. install ubuntu linux 20.04.5 LTS 
 2. install VSCode (from software library in ubuntu)
-3. install ROS noetic ninjemys (full installation)
-   - `$ mkdir -p ~/catkin_ws/src` (to create a ROS catkin workspace)
+3. install ROS noetic ninjemys and set up catkin workspace
+   - `$ sudo apt update`
+   - `$ sudo apt install ros-noetic-desktop-full`
+   - `$ sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+   - `$ mkdir -p ~/catkin_ws/src`
    - `$ source /opt/ros/noetic/setup.bash`
    - `$ cd ~/catkin_ws/src`
    - `$ catkin_init_workspace`
    - `$ cd ~/catkin_ws`
    - `$ catkin_make`
 5. verify gcc and python compiler versions installed (shouldn't normally be necessary)
-6. install (a staggering number of) packages using `$ sudo apt-get install package_name`
+   - `$ python3 --version`
+   - `$ gcc --version'
+7. install (a staggering number of) packages using `$ sudo apt-get install *package_name*`
    - `ros-noetic-urdf` (might not be necessary)
    - `ros-noetic-xacro` (might not be necessary)
    - `liburdfdom-tools`
@@ -63,7 +68,7 @@ installation instructions on linux:
    - `ros-noetic-navigation`
    - `ros-noetic-gmapping`
    - `ros-noetic-map-server`
-7. git clone repo and compile environment
+8. git clone repo and compile environment
    - `$ git clone https://github.com/kamccall/cpp-ud-ROS-robot-capstone.git`
    - (within cloned repo) `$ cp -r km_diff_robot_gazebo ~/catkin_ws/src`
    - (within cloned repo) `$ cp -r km_diff_robot_gazebo_auto ~/catkin_ws/src`
