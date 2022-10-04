@@ -1,5 +1,5 @@
 # cpp-ud-ROS-robot-capstone
-udacity c++ capstone programming assignment using ROS gazebo, teleop, custom nodes and messages to display odometry
+udacity c++ capstone programming assignment using ROS gazebo, teleop, rviz, custom nodes and messages to display odometry
 
 ## project description
 i chose the ROS project, choosing to implement two different nodes, but doing so using many other ROS services in order to learn and understand how all the ROS services work together.  specifically, i started by going through two ROS programming books in order to understand how everything works (*mastering ROS for robotics programming*, third edition, joseph and cacace, copyright 2021, and *hands-on ROS for robotics programming*, japon, copyright 2020). this took 100+ hours, and involved many (normally small) individual programming assignments in order to work through many different concepts.  while this project is arguably a minimal amount of c++ code, i wanted to select a few end-to-end scenarios that combine various important  concepts and services in order to demonstrate a large surface area of what is possible with ROS. 
