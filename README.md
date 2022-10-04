@@ -10,7 +10,7 @@ more specifically, there are three demo tracks that show use of various ROS serv
 * demo of planning and autonomous movement of diffbot through gazebo environment controlled by rviz based on map created in (2) above 
 
 ## file and directory structure
-the (more detailed) demo summarized below will refer to the files and how they are used. i have organized the work into two distinct ROS packages, that both exist in the 'catkin' workspace hierarchy. both of these ROS packages are therefore placed under the /home/username/catkin_ws/src hierarchy, and are therefore accessed most directly by doing to ~/catkin_ws/src/package_name. in this case, both of the solutions exist there. 
+the (more detailed) demo summarized below will refer to the files and how they are used. i have organized the work into two distinct ROS packages, that both exist in the 'catkin' workspace hierarchy. both of these ROS packages are therefore placed under the /home/username/catkin_ws/src hierarchy, and are therefore accessed most directly by going to ~/catkin_ws/src/package_name. 
 the files and directories under each of the demo solutions are:
 ### km_diff_robot_gazebo project (~/catkin_ws/src/km_diff_robot_gazebo)
 * package.xml file: ROS .xml file that defines all the ROS package dependencies for compilation and execution
@@ -32,9 +32,20 @@ the files and directories under each of the demo solutions are:
 * urdf dir: ROS .xacro files for diffbot and constituent wheel definition
 
 ## installation implications and required packages
+while the rubric requests cross-platform installation instructions, given the well-documented differences (and challenges) of having a similar ROS experience on windows as well as the (disproportionate) focus on linux within the community for doing ROS development, i am taking the liberty of only providing install instructions for linux.  oh udacity gods please forgive me for this omission and do not send snakes to my bed because they completely freak me out (did you see the video of that guy who kissed the cobra he saved in new delhi and was bitten in the face? really really poor judgement, dude). 
 
+installation instructions on linux:
+1. install ubuntu linux 20.04.5 LTS 
+2. install VSCode (from software library in ubuntu)
+3. install ROS noetic ninjemys (full installation)
+4. verify gcc and python compiler versions installed (shouldn't normally be necessary)
+5. install (an absolutely staggering number of) packages using $ sudo apt get install package_name
+6. - ros-noetic-urdf (might not be necessary)
+7. - ros-noetic-xacro (might not be necessary)
+8. - liburdfdom-tools
 
 ## demo and behavior
+
 
 
 ## rubric points addressed
