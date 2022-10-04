@@ -123,5 +123,15 @@ this demo can be run successfully without going through demo2 above, because the
   - `sub_robot_odometry.cpp` line 32
 
 ### object oriented programming
+* project uses object oriented programming techniques
+  - `sub_robot_odometry.cpp` lines 17, 20-24, 30-85
+* classes use appropriate access specifiers for class members
+  - `sub_robot_odometry.cpp` lines 20, 30
+* classes abstract implementation details from their interfaces
+  - `sub_robot_odometry.cpp` lines 30-85
 
+### memory management
+* project makes use of references in function declarations
+  - `sub_robot_odometry.cpp` lines 30, 48
+  - `sub_robot_location.cpp` line 18
 
