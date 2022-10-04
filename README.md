@@ -5,12 +5,12 @@ udacity c++ capstone programming assignment using ROS gazebo, teleop, custom nod
 i chose the ROS project, choosing to implement two different nodes, but doing so using many other ROS services in order to learn and understand how all the ROS services work together.  specifically, i started by going through two ROS programming books in order to understand how everything works (*mastering ROS for robotics programming*, third edition, joseph and cacace, copyright 2021, and *hands-on ROS for robotics programming*, japon, copyright 2020). this took 120+ hours, and involved many (normally small) individual programming assignments in order to work through many different concepts.  while this project is arguably a minimal amount of c++ code, i wanted to select a few end-to-end scenarios that combine various important  concepts and services in order to demonstrate a large surface area of what is possible with ROS. 
 
 more specifically, there are three demo tracks that show use of various ROS services:
-* diffbot robot shown in gazebo, controlled by teleop with custom odometry display
-* use of moveit! and navigation services to create an environment map to support autonomous movement 
-* demo of planning and autonomous movement of diffbot through gazebo environment controlled by rviz based on map created in (2) above 
+* diffbot robot shown in `gazebo`, controlled by teleop with custom odometry display
+* use of `moveit!` and `navigation` services to create an environment map to support autonomous movement 
+* demo of planning and autonomous movement of diffbot through `gazebo` environment controlled by `rviz` based on map created in (2) above 
 
 ## file and directory structure
-the (more detailed) demo summarized below will refer to the files and how they are used. i have organized the work into two distinct ROS packages, that both exist in the 'catkin' workspace hierarchy. both of these ROS packages are therefore placed under the /home/username/catkin_ws/src hierarchy, and are therefore accessed most directly by `$ cd ~/catkin_ws/src/package_name`. 
+the (more detailed) demo summarized below will refer to the files and how they are used. i have organized the work into two distinct ROS packages, that both exist in the `catkin` workspace hierarchy. both of these ROS packages are therefore placed under the `/home/username/catkin_ws/src` hierarchy, and are therefore accessed most directly by `$ cd ~/catkin_ws/src/package_name`. 
 the files and directories under each of the demo solutions are:
 ### `km_diff_robot_gazebo project` project (`~/catkin_ws/src/km_diff_robot_gazebo`)
 * `package.xml` file: ROS `.xml` file that defines all the ROS package dependencies for compilation and execution
@@ -39,7 +39,7 @@ installation instructions on linux:
 2. install VSCode (from software library in ubuntu)
 3. install ROS noetic ninjemys (full installation)
 4. verify gcc and python compiler versions installed (shouldn't normally be necessary)
-5. install (a staggering number of) packages using `$ sudo apt get install package_name`
+5. install (a staggering number of) packages using `$ sudo apt-get install package_name`
    - `ros-noetic-urdf` (might not be necessary)
    - `ros-noetic-xacro` (might not be necessary)
    - `liburdfdom-tools`
