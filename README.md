@@ -91,26 +91,26 @@ i have organized the two projects into three discrete demonstrations.  all requi
 below are the instructions for running all the apps and services necessary to create a map (for performing localization at runtime) while navigating through a gazebo environment. while you can go through them to create a new map, it is rather time consuming (and, uh, tedious), so these tasks have already been performed, and the `.pgm` and `.yaml` files necessary to navigate with this map are already in the `~/catkin_ws/src/km_diff_robot_gazebo_auto/maps` directory, with filenames `map_wg1.pgm` and `map_wg1.yaml`. demo3 is already wired to point to these files specifically when executing the demo. 
 1. `$ roscore` (starts ROS master server, parameter server and other services)
 2. `$ roslaunch km_diff_robot_gazebo_auto diff_wheeled_gazebo_willow.launch` (launches gazebo with diffbot in willow environment)
-3. `$ roslaunch km_diff_robot_gazebo_auto gmapping.launch`
-4. `$ roslaunch km_diff_robot_gazebo_auto keyboard_teleop.launch`
+3. `$ roslaunch km_diff_robot_gazebo_auto gmapping.launch` (launches mapping application in background)
+4. `$ roslaunch km_diff_robot_gazebo_auto keyboard_teleop.launch` (launches teleop application)
 5. click into active teleop window running python script, and use keystrokes to move robot around perimeter of the room in order to effectively 'illuminate' all the corners using the simulated lidar sensor on the robot
-6. `$ rosrun map_server map_saver -f map_name`
-7. `$ cp map_name.* ~/catkin_ws/src/km_diff_robot_gazebo_auto/maps`
+6. `$ rosrun map_server map_saver -f map_name` (saves the `.pgm` and `.yaml` map files in local directory)
+7. `$ cp map_name.* ~/catkin_ws/src/km_diff_robot_gazebo_auto/maps` (move map files to correct `maps` dir, if you aren't already there)
 
 ### demo3: autonomously navigate robot through gazebo from rviz using saved environment map
 this demo can be run successfully without going through demo2 above, because the environment has already been mapped and the necessary files already exist in the package hierarchy. 
 1. `$ roscore` (starts ROS master server, parameter server and other services)
-2. `$ roslaunch km_diff_robot_gazebo_auto diff_wheeled_gazebo_willow.launch`
-3. `$ roslaunch km_diff_robot_gazebo_auto amcl.launch`
-4. `$ rviz`
-5. within rviz, you must click Add to enable various views, such as:
+2. `$ roslaunch km_diff_robot_gazebo_auto diff_wheeled_gazebo_willow.launch` (launches gazebo with diffbot in willow environment)
+3. `$ roslaunch km_diff_robot_gazebo_auto amcl.launch` (launches `amcl` application to perform localization within map to support autonomous navigation)
+4. `$ rviz` (launches the gazebo visualization utility)
+5. within rviz, you must click `Add` (in lower left of screen) to enable various views, such as:
    - `RobotModel`
    - `LaserScan`
    - `Map`
    - `Path`
    - local and global `cost map`
    - local and global `Path`
-6. click on `Nav 2D` button in upper ribbon, click on location on rviz diplay, and watch the robot go!
+6. click on `Nav 2D` button in upper ribbon, click on desired map location on rviz diplay, and watch the robot go!
 
 ## rubric points addressed
 
