@@ -12,7 +12,7 @@ more specifically, there are three demo tracks that show use of various ROS serv
 ## file and directory structure
 the (more detailed) demo summarized below will refer to the files and how they are used. i have organized the work into two distinct ROS packages, that both exist in the `catkin` workspace hierarchy. both of these ROS packages are therefore placed under the `/home/username/catkin_ws/src` hierarchy, and are therefore accessed most directly by `$ cd ~/catkin_ws/src/package_name`. 
 the files and directories under each of the demo solutions are:
-### `km_diff_robot_gazebo project` project (`~/catkin_ws/src/km_diff_robot_gazebo`)
+### `km_diff_robot_gazebo` project (`~/catkin_ws/src/km_diff_robot_gazebo`)
 * `package.xml` file: ROS `.xml` file that defines all the ROS package dependencies for compilation and execution
 * `CMakeLists.txt` file: CMake file that details all package and custom message dependencies but also c++ executables
 * `config` dir: ROS `.yaml` files relevant for robot definition
