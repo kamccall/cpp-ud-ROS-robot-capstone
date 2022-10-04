@@ -76,22 +76,41 @@ installation instructions on linux:
    - `$ catkin_make`
 
 ## demo and behavior
-i have organized the two projects into three discrete demonstrations.  the first requires five linux terminal windows and the second and third require four unique windows to perform properly. (this assumes that both packages have been compiled using instructions above.)
+i have organized the two projects into three discrete demonstrations.  all require five linux terminal windows. 
+(this assumes that both packages have been compiled using instructions above.)
 
-### demo1: manually controlling robot in gazebo environment with custom odometry display (each in separate terminal)
+### demo1: manually controlling robot in gazebo environment with custom odometry display (run each command in separate terminal)
 1. `$ roscore` (starts ROS master server, parameter server and other services)
 2. `$ roslaunch km_diff_robot_gazebo diff_wheeled_gazebo_willow.launch` (launches gazebo with diffbot in willow environment)
 3. `$ roslaunch km_diff_robot_gazebo keyboard_teleop.launch` (launches teleop application)
-4. `$ rosrun km_diff_robot_gazebo sub_robot_odometry` (launches app that will display forward and angular velocity)
-5. `$ rosrun km_diff_robot_gazebo sub_robot_location` (launches app that will display location subset, only x and y coordinates)
-6. click into active teleop window running python script, and use keystrokes to move robot, observing movement and node output
+4. `$ rosrun km_diff_robot_gazebo sub_robot_odometry` (launches ROS node that will display forward and angular velocity)
+5. `$ rosrun km_diff_robot_gazebo sub_robot_location` (launches ROS node that will display location subset, only x and y coordinates)
+6. click into active teleop window running python script, and use keystrokes to move robot, observing movement in gazebo and ROS node output
 
 ### demo2: manually navigating robot through gazebo to create map of environment (to support demo3)
-
+below are the instructions for running all the apps and services necessary to create a map (for performing localization at runtime) while navigating through a gazebo environment. while you can go through them to create a new map, it is rather time consuming (and, uh, tedious), so these tasks have already been performed, and the `.pgm` and `.yaml` files necessary to navigate with this map are already in the `~/catkin_ws/src/km_diff_robot_gazebo_auto/maps` directory, with filenames `map_wg1.pgm` and `map_wg1.yaml`. demo3 is already wired to point to these files specifically when executing the demo. 
+1. `$ roscore` (starts ROS master server, parameter server and other services)
+2. `$ roslaunch km_diff_robot_gazebo_auto diff_wheeled_gazebo_willow.launch` (launches gazebo with diffbot in willow environment)
+3. `$ roslaunch km_diff_robot_gazebo_auto gmapping.launch`
+4. `$ roslaunch km_diff_robot_gazebo_auto keyboard_teleop.launch`
+5. click into active teleop window running python script, and use keystrokes to move robot around perimeter of the room in order to effectively 'illuminate' all the corners using the simulated lidar sensor on the robot
+6. `$ rosrun map_server map_saver -f map_name`
+7. `$ cp map_name.* ~/catkin_ws/src/km_diff_robot_gazebo_auto/maps`
 
 ### demo3: autonomously navigate robot through gazebo from rviz using saved environment map
-
-
+this demo can be run successfully without going through demo2 above, because the environment has already been mapped and the necessary files already exist in the package hierarchy. 
+1. `$ roscore` (starts ROS master server, parameter server and other services)
+2. `$ roslaunch km_diff_robot_gazebo_auto diff_wheeled_gazebo_willow.launch`
+3. `$ roslaunch km_diff_robot_gazebo_auto amcl.launch`
+4. `$ rviz`
+5. within rviz, you must click Add to enable various views, such as:
+   - `RobotModel`
+   - `LaserScan`
+   - `Map`
+   - `Path`
+   - local and global `cost map`
+   - local and global `Path`
+6. click on `Nav 2D` button in upper ribbon, click on location on rviz diplay, and watch the robot go!
 
 ## rubric points addressed
 
