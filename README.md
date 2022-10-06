@@ -6,7 +6,7 @@ i chose the ROS project, choosing to implement two different nodes, but doing so
 
 more specifically, there are three demo tracks that show use of various ROS services:
 * diffbot robot shown in `gazebo`, controlled by teleop with custom odometry display
-* use of `moveit!` and `navigation` services to create an environment map to support autonomous movement 
+* use of `gmapping`, `moveit!` and `navigation` ROS packages to create an environment map to support autonomous movement 
 * demo of planning and autonomous movement of diffbot through `gazebo` environment controlled by `rviz` based on map created in (2) above 
 
 ## file and directory structure
