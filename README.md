@@ -7,7 +7,7 @@ i chose the ROS project, choosing to implement two different nodes, but doing so
 more specifically, there are three demo tracks that show use of various ROS services:
 * diffbot robot shown in `gazebo`, controlled by teleop with custom odometry display
 * use of `gmapping`, `moveit!` and `navigation` ROS packages to create an environment map to support autonomous movement 
-* demo of planning and autonomous movement of diffbot through `gazebo` environment controlled by `rviz` based on map created in (2) above 
+* demo of planning and autonomous movement of diffbot through `gazebo` environment controlled by `rviz` leveraging `amcl` package based on map created in (2) above 
 
 ## file and directory structure
 the (more detailed) demo summarized below will refer to the files and how they are used. i have organized the work into two distinct ROS packages, that both exist in the `catkin` workspace hierarchy. both of these ROS packages are therefore placed under the `/home/username/catkin_ws/src` hierarchy, and are therefore accessed most directly by `$ cd ~/catkin_ws/src/package_name`. 
